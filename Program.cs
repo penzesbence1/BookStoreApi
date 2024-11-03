@@ -1,5 +1,6 @@
 
 using BookStoreApi.Models;
+using BookStoreApi.Services;
 
 namespace BookStoreApi
 {
@@ -13,7 +14,7 @@ namespace BookStoreApi
             builder.Services.Configure<BookStoreDatabaseSettings>(
             builder.Configuration.GetSection("BookStoreDatabase"));
 
-
+            builder.Services.AddSingleton<BooksService>();
             // Add services to the container.
 
             builder.Services.AddControllers();
