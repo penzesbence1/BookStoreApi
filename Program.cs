@@ -1,4 +1,6 @@
 
+using BookStoreApi.Models;
+
 namespace BookStoreApi
 {
     public class Program
@@ -6,6 +8,11 @@ namespace BookStoreApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            builder.Services.Configure<BookStoreDatabaseSettings>(
+            builder.Configuration.GetSection("BookStoreDatabase"));
+
 
             // Add services to the container.
 
